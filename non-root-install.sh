@@ -186,8 +186,8 @@ testnet=1
 # You must set rpcuser and rpcpassword to secure the JSON-RPC api
 # Please make rpcpassword to something secure, '5gKAgrJv8CQr2CGUhjVbBFLSj29HnE6YGXvfykHJzS3k' for example.
 # Listen for JSON-RPC connections on <port> (default: 8332 or testnet: 18332)
-rpcuser=USERNAME
-rpcpassword=PASSWORD
+rpcuser=rpcuserbitcoin
+rpcpassword=matrix2015
 rpcport=18332
 
 # Notify when receiving coins
@@ -314,9 +314,9 @@ EOF
     Configure the Google Id, Secret and callback in $(pwd)//config/application.yml
     Note: Make sure your host ISN'T an IP in the callback config.
     Looks like Google auth expect a callback to a DNS only
-      GOOGLE_CLIENT_ID: <Google id>
-      GOOGLE_CLIENT_SECRET: <Google secret>
-      GOOGLE_OAUTH2_REDIRECT_URL: http://ec2-xx-xx-xx-xx.compute-1.amazonaws.com:3000/auth/google_oauth2/callback
+      GOOGLE_CLIENT_ID: 480554426726-ma5rhc35on57902n3ebfokal73j56b3e.apps.googleusercontent.com
+      GOOGLE_CLIENT_SECRET: rqp2X98d-jQmxtS0YeyJpzcV
+      GOOGLE_OAUTH2_REDIRECT_URL: http://cryptomarketsupply.com:3000/auth/google_oauth2/callback
 
 EOF
 
@@ -344,7 +344,7 @@ install_peatio_tradingui () {
     Setup Peatio-trading-ui
 
     Edit the /config/application.yml and set your app DNS. Ex:
-       PLATFORM_ROOT_URL: http://ec2-xx-xx-xxx-xxx.compute-1.amazonaws.com
+       PLATFORM_ROOT_URL: cryptomarketsupply.com
 
 EOF
     nohup bundle exec rails server -p 4000 &
@@ -370,7 +370,7 @@ install_nginx () {
     fi
     cat << EOF > /etc/nginx/sites-available/default
 server {
-  server_name http://nax.nacoinex.com;
+  server_name http://cryptomarketsupply.com;
   listen      80 default_server;
 
   location ~ ^/(?:trading|trading-ui-assets)\/ {
